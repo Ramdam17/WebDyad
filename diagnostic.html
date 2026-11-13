@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDyad diagnostic</title>
+    <style>body{color:#f0f0f4;background:#101014;margin:0;font-family:system-ui,sans-serif}main{max-width:960px;padding:16px}h1{font-size:20px}fieldset{border:1px solid #3a3a46;border-radius:6px;margin:0 0 12px}legend{color:#b8b8c4;padding:0 6px}button,label.file{font:inherit;color:inherit;cursor:pointer;background:#1c1c24;border:1px solid #5a5a6a;border-radius:6px;margin:4px 6px 4px 0;padding:8px 14px;display:inline-block}button:disabled{opacity:.45;cursor:default}input[type=file]{display:none}pre,textarea{white-space:pre-wrap;color:inherit;box-sizing:border-box;background:#16161c;border:0;border-radius:6px;width:100%;padding:8px;font:12px ui-monospace,monospace;overflow-x:auto}textarea{height:160px}#commit{opacity:.6;font:11px ui-monospace,monospace;position:fixed;bottom:8px;right:8px}</style>
+    <script type="module" crossorigin src="./assets/diagnostic-DP7iGIMg.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dyad-session--C4VgQHw.js">
+    <link rel="modulepreload" crossorigin href="./assets/recording-file-osyD-ERU.js">
+  </head>
+  <body>
+    <main>
+      <h1>WebDyad diagnostic</h1>
+      <p>
+        Developer tool. Two headbands, A and B, with their own counters. A live or simulated run is
+        recorded from its first packet. A recording holds the signals of real people: it stays on
+        this device and is never uploaded.
+      </p>
+
+      <fieldset>
+        <legend>Source</legend>
+        <button id="connect-a" type="button">Connect headband A</button>
+        <button id="connect-b" type="button">Connect headband B</button>
+        <button id="simulate" type="button">Simulate two people</button>
+        <label for="coupling">coupling</label>
+        <input id="coupling" type="range" min="0" max="1" step="0.1" value="0.5" />
+        <output id="coupling-value">0.5</output>
+        <label class="file" for="replay-file">Replay a recording</label>
+        <input id="replay-file" type="file" accept=".jsonl,.txt,application/json,text/plain" />
+        <button id="stop" type="button">Stop all</button>
+      </fieldset>
+
+      <fieldset>
+        <legend>Recording and measures</legend>
+        <button id="save-recording" type="button" disabled>Save recording</button>
+        <button id="share-recording" type="button" disabled>Share recording</button>
+        <button id="export" type="button">Export measures</button>
+      </fieldset>
+
+      <pre id="notice"></pre>
+      <pre id="stats"></pre>
+      <textarea id="export-text" readonly placeholder="The measure text appears here."></textarea>
+    </main>
+    <div id="commit"></div>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDyad control</title>
+    <style>body{color:#f0f0f4;background:#101014;margin:0;font-family:system-ui,sans-serif}main{padding:12px 16px 40px}h1{margin:0 0 8px;font-size:20px}h2{color:#b8b8c4;margin:16px 0 6px;font-size:15px}fieldset{border:1px solid #3a3a46;border-radius:6px;margin:0 0 12px}legend{color:#b8b8c4;padding:0 6px}button,label.file{font:inherit;color:inherit;cursor:pointer;background:#1c1c24;border:1px solid #5a5a6a;border-radius:6px;margin:4px 6px 4px 0;padding:10px 14px;display:inline-block}button:disabled{opacity:.45;cursor:default}input[type=file]{display:none}#inspiration{touch-action:manipulation;-webkit-user-select:none;user-select:none;background:#14303d;border:2px solid #7fd1ff;width:100%;min-height:96px;margin:0 0 12px;font-size:26px;display:block}#inspiration.flash{background:#2c6a85}pre{white-space:pre-wrap;background:#16161c;border-radius:6px;margin:0 0 12px;padding:8px;font:12px ui-monospace,monospace;overflow-x:auto}#contact{flex-wrap:wrap;gap:20px;margin-bottom:8px;display:flex}.person-dots{align-items:center;gap:10px;display:flex}.dot{color:#b8b8c4;flex-direction:column;align-items:center;font-size:11px;display:inline-flex}.dot i{background:#555;border:2px solid #101014;border-radius:50%;width:22px;height:22px;display:block}.dot i[data-level=good]{background:#4cd27a}.dot i[data-level=fair]{background:#f0b84c}.dot i[data-level=poor]{background:#e0605a}table{border-collapse:collapse;margin-bottom:8px;font:13px ui-monospace,monospace}th,td{text-align:right;border-bottom:1px solid #2a2a34;padding:3px 10px}th:first-child,td:first-child{text-align:left}#traces{grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:8px;display:grid}.trace{background:#16161c;border-radius:6px;padding:4px 6px}.trace header{color:#b8b8c4;justify-content:space-between;font-size:12px;display:flex}.trace canvas{width:100%;height:48px;display:block}#commit{opacity:.6;font:11px ui-monospace,monospace;position:fixed;bottom:8px;right:8px}@media (orientation:portrait){#traces{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}</style>
+    <script type="module" crossorigin src="./assets/control-BO34yfsp.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/dyad-session--C4VgQHw.js">
+    <link rel="modulepreload" crossorigin href="./assets/pipeline-42w0iuIk.js">
+    <link rel="modulepreload" crossorigin href="./assets/recording-file-osyD-ERU.js">
+  </head>
+  <body>
+    <main>
+      <h1>WebDyad control</h1>
+      <p>
+        Developer tool. Every measure of the feature frame, live, replayed or simulated. A solid
+        line is valid, a dashed dim line is the last valid value kept, a gap is a value never valid.
+        The recording holds the signals of real people: it stays on this device and is never
+        uploaded.
+      </p>
+
+      <button id="inspiration" type="button">Inspiration</button>
+
+      <fieldset>
+        <legend>Source</legend>
+        <button id="connect-a" type="button">Connect headband A</button>
+        <button id="connect-b" type="button">Connect headband B</button>
+        <button id="simulate" type="button">Simulate two people</button>
+        <label class="file" for="replay-file">Replay a recording</label>
+        <input id="replay-file" type="file" accept=".jsonl,.txt,application/json,text/plain" />
+        <button id="stop" type="button">Stop all</button>
+        <button id="save-recording" type="button" disabled>Save recording</button>
+      </fieldset>
+
+      <pre id="notice"></pre>
+
+      <h2>Contact (TP9, AF7, AF8, TP10)</h2>
+      <div id="contact"></div>
+
+      <h2>Synchrony of the pair</h2>
+      <table id="sync"></table>
+
+      <h2>Pulse gate and refused beats (heuristic)</h2>
+      <table id="gate"></table>
+
+      <h2>Cost of the processing</h2>
+      <pre id="cost"></pre>
+
+      <div id="traces"></div>
+    </main>
+    <div id="commit"></div>
+  </body>
+</html>

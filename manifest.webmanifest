@@ -1,0 +1,10 @@
+{
+  "name": "WebDyad",
+  "short_name": "WebDyad",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#1c1612",
+  "theme_color": "#1c1612"
+}
